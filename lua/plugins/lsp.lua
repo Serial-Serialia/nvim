@@ -158,7 +158,6 @@ return {
 				Lua = {},
 			},
 		})
-
 		vim.lsp.enable("lua_ls")
 
 		vim.lsp.config("html", {})
@@ -169,5 +168,17 @@ return {
 
 		vim.lsp.config("emmet_language_server", {})
 		vim.lsp.enable("emmet_language_server")
+
+		vim.lsp.config("cssls", {})
+		vim.lsp.enable("cssls")
+
+		vim.lsp.config("eslint", {})
+		vim.lsp.enable("eslint")
+
+		vim.lsp.config("omnisharp", {})
+		vim.lsp.enable("omnisharp")
+
+		vim.lsp.config("basedpyright", {})
+		vim.lsp.enable("basedpyright")
 	end,
 }
