@@ -7,5 +7,15 @@ return {
 		indent = { enabled = true },
 		debug = { enabled = true },
 		scroll = { enabled = true },
+		explorer = { enabled = true, replace_netrw = true, trash = true },
+	},
+	keys = {
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
+		},
 	},
 }

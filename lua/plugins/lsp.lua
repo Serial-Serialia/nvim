@@ -5,7 +5,10 @@ return {
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		-- Mason must be loaded before its dependents so we need to set it up here.
 		-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-		{ "mason-org/mason.nvim", opts = {} },
+		{
+			"mason-org/mason.nvim",
+			opts = { registries = { "github:Crashdummyy/mason-registry", "github:mason-org/mason-registry" } },
+		},
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Useful status updates for LSP.
@@ -117,7 +120,8 @@ return {
 			"eslint-lsp",
 			"css-lsp",
 			"html-lsp",
-			"omnisharp",
+			"roslyn",
+			"emmet-language-server",
 		})
 
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -158,6 +162,7 @@ return {
 				Lua = {},
 			},
 		})
+
 		vim.lsp.enable("lua_ls")
 
 		vim.lsp.config("html", {})
@@ -169,14 +174,14 @@ return {
 		vim.lsp.config("emmet_language_server", {})
 		vim.lsp.enable("emmet_language_server")
 
+		vim.lsp.config("roslyn_ls", {})
+		vim.lsp.enable("roslyn_ls")
+
 		vim.lsp.config("cssls", {})
 		vim.lsp.enable("cssls")
 
 		vim.lsp.config("eslint", {})
 		vim.lsp.enable("eslint")
-
-		vim.lsp.config("omnisharp", {})
-		vim.lsp.enable("omnisharp")
 
 		vim.lsp.config("basedpyright", {})
 		vim.lsp.enable("basedpyright")
